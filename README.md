@@ -1,6 +1,6 @@
 # Flask-Share
 
-Milligram — a minimalist CSS framework — helper for Jinja2 template engine in Flask.
+[Milligram](https://milligram.io/) — a minimalist CSS framework — helper for Jinja2 template engine in Flask.
 
 ## Links
 

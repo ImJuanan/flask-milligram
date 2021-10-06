@@ -1,0 +1,3 @@
+graft flask_milligram/static
+graft flask_milligram/templates
+include LICENSE test_flask_milligram.py

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% from 'milligram/pagination.html' import render_pagination %}
+
+{% block content %}
+<h2>Movies</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publish Year</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.genre }}</td>
+            <td>{{ movie.publish_year }}</td>
+            <td>{{ movie.rating }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<h2>Render pagination with render_pagination</h2>
+<pre><code>{% raw %}{{ render_pagination(pagination) }}{% endraw %}</code></pre>
+{{ render_pagination(pagination) }}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% from 'milligram/utilities.html' import render_badge %}
+
+{% block content %}
+<h2>Render badge with render_badge</h2>
+<pre><code>{% raw %}{{ render_badge('Badge') }}{% endraw %}</code></pre>
+Badge with normal size: {{ render_badge('Badge') }}
+<pre><code>{% raw %}{{ render_badge('Badge', small = True) }}{% endraw %}</code></pre>
+Badge with small size: {{ render_badge('Badge', small=True) }}
+{% endblock %}

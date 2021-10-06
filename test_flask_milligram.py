@@ -1,5 +1,5 @@
 """
-    flask_milligram
+    test_flask_milligram
     ~~~~~~~~~~~~~~
     Milligram — a minimalist CSS framework — helper for Jinja2 template engine in Flask.
 
@@ -164,7 +164,3 @@ class MilligramTestCase(unittest.TestCase):
         data = response.get_data(as_text=True)
         self.assertIn('<span class="badge">Badge</span>', data)
         self.assertIn('<span class="badge badge--small">Badge</span>', data)
-
-
-if __name__ == '__main__':
-    unittest.main()

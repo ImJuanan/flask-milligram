@@ -1,0 +1,40 @@
+{% from 'milligram/nav.html' import render_navbar %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Flask-Milligram Example Application</title>
+        {{ milligram.load_css() }}
+        <style>
+            nav {
+                margin-bottom: 2rem;
+            }
+            table {
+                text-align: center;
+            }
+            footer {
+                text-align: center;
+                margin: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        {% set navigation = [('index', 'Home'),('test_nav', 'Navigation'),
+			('test_pagination', 'Pagination'), ('test_badge', 'Badge')] %}
+        {{render_navbar(navigation) }}
+
+        <main class="container">
+			{% block content %}{% endblock %}
+		</main>
+
+        <footer>
+            <small>
+                &copy; 2021 <a href="#" title="Written by Juan An">Juan An</a>
+            </small>
+        </footer>
+
+        {{ milligram.load_js() }}
+    </body>
+</html>

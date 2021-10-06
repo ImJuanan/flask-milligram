@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% from 'milligram/nav.html' import render_navbar, render_breadcrumb %}
+
+{% block content %}
+<h2>Render navbar with render_navbar</h2>
+<pre><code>
+    {% raw %}
+    {{ render_navbar([
+        ('index', 'Home'), 
+        ('test_nav', 'Navigation'),
+        ('test_pagination', 'Pagination'),
+        ('test_badge', 'Badge')
+        ])
+    }}
+    {% endraw %}
+</code></pre>
+{{ render_navbar([('index', 'Home'), ('test_nav', 'Navigation'),
+	('test_pagination', 'Pagination'), ('test_badge', 'Badge')]) }}
+
+<h2>Render breadcrumb with render_breadcrumb</h2>
+<pre><code>
+    {% raw %}
+    {{ render_breadcrumb([
+        ('index', 'Home'),
+        ('test_nav', 'Navigation'),
+        ('test_pagination', 'Pagination'),
+        ('test_badge', 'Badge')], use_ol = True)
+    }}
+    {% endraw %}
+</code></pre>
+{{ render_breadcrumb([ ('index', 'Home'), ('test_nav', 'Navigation'),
+	('test_pagination', 'Pagination'), ('test_badge', 'Badge')], use_ol=True) }}
+{% endblock %}

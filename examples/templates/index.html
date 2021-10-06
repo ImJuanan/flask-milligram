@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>Flask-Milligram Example Application</h1>
+	<ul>
+		<li><a href="{{ url_for('test_nav') }}">Navigation</a></li>
+		<li><a href="{{ url_for('test_pagination') }}">Pagination</a></li>
+		<li><a href="{{ url_for('test_badge') }}">Badge</a></li>
+	</ul>
+{% endblock %}
