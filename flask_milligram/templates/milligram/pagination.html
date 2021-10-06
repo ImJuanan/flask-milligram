@@ -1,0 +1,42 @@
+{% macro render_pagination(pagination, fragment='', endpoint=None, ellipses='…') %}
+    {% if fragment != '' and not fragment.startswith('#') %}{% set fragment = '#' + fragment %}{% endif %}
+    {% with url_args = {} %}
+		{% do url_args.update(request.view_args if not endpoint else {}), url_args.update(request.args if not endpoint else {}) %}
+        {% with endpoint = endpoint or request.endpoint %}
+            <nav>
+                <ul class="pagination">
+					<li class="page-item{% if not pagination.has_prev %} disabled{% endif %}">
+						{% with kwargs = {} %}
+							{% do kwargs.update(url_args),  kwargs.update(page=pagination.prev_num) %}
+								<a class="page-link" href="{{ url_for(endpoint, **kwargs) if pagination.has_prev else '#' }}{{ fragment }}">&laquo;</a>
+						{% endwith %}
+					</li>
+                    {% for page in pagination.iter_pages() %}
+                        {% if page %}
+                            {% if page != pagination.page %}
+                                <li class="page-item">
+									{% with kwargs = {} %}
+										{% do kwargs.update(url_args),  kwargs.update(page=page) %}	
+											<a class="page-link" href="{{ url_for(endpoint, **kwargs) }}{{ fragment }}">{{ page }}</a>
+									{% endwith %}
+                                </li>
+                            {% else %}
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">{{ page }}</a>
+                                </li>
+                            {% endif %}
+                        {% elif ellipses != None %}
+                            <li class="page-item disabled"><a class="page-link" href="#">{{ ellipses }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+					<li class="page-item{% if not pagination.has_next %} disabled{% endif %}">
+						{% with kwargs = {} %}
+							{% do kwargs.update(url_args),  kwargs.update(page=pagination.next_num) %}
+								<a class="page-link" href="{{ url_for(endpoint, **kwargs) if pagination.has_next else '#' }}{{ fragment }}">&raquo;</a>
+						{% endwith %}
+					</li>
+                </ul>
+            </nav>
+        {% endwith %}
+    {% endwith %}
+{% endmacro %}

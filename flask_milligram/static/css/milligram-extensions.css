@@ -1,0 +1,173 @@
+.nav {
+    align-items: center;
+    background: #9b4dca;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+}
+
+.nav__item {
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+.nav__item > a {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav__item > a.active,
+.nav__item > a:hover {
+    color: #c5c8ca;
+}
+
+.nav__toggler {
+    cursor: pointer;
+    fill: #fff;
+    height: 36px;
+    opacity: 0.5;
+    transition: box-shadow 0.15s;
+    width: 36px;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #fff;
+    opacity: 1;
+}
+
+.collapsible__content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
+}
+
+@media (min-width: 40rem) {
+    .nav__toggler {
+        display: none;
+    }
+    .nav__list {
+        display: flex;
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+        width: auto;
+    }
+    .nav__item {
+        padding: 0.5rem 2rem;
+    }
+}
+
+/* FIXME: Modify font-size of badge */
+.badge {
+    background: #9b4dca;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+}
+
+.badge--small {
+    font-size: 1.6rem;
+}
+
+@media (min-width: 40rem) {
+    .badge {
+        font-size: 1.5rem;
+    }
+    .badge--small {
+        font-size: 1.2rem;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0 0;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.8rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #606c76;
+    content: "/";
+    padding-right: 0.8rem;
+}
+
+/* FIXME: Set active for breadcrumb-item */
+.breadcrumb-item > a.active {
+    color: #606c76;
+}
+
+.pagination {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    color: #9b4dca;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #9b4dca;
+    transition: all 0.3s;
+}
+
+.page-link:hover {
+    color: #9b4dca;
+    background: #f3eeee;
+}
+
+.page-link:focus {
+    z-index: 2;
+    color: #9b4dca;
+    background: #f3eeee;
+}
+
+.page-item:not(:first-child) .page-link {
+    margin-left: -1px;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #9b4dca;
+}
+
+.page-item.disabled .page-link {
+    color: #a8b0b6;
+    pointer-events: none;
+}
+
+.page-link {
+    padding: 0.6rem 1.2rem;
+}
+
+.page-item:first-child .page-link {
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+}

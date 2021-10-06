@@ -1,0 +1,3 @@
+{% macro render_badge(text, small=False) %}
+	<span class="badge{% if small %} badge--small"{% else %}"{% endif %}>{{ text }}</span>
+{% endmacro %}
