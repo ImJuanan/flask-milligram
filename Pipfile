@@ -8,6 +8,7 @@ name = "pypi"
 [dev-packages]
 sphinx = "*"
 flask-sphinx-themes = "*"
+twine = "*"
 
 [requires]
 python_version = "3.7"

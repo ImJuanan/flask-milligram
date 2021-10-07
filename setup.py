@@ -5,7 +5,8 @@ Flask-Milligram
 
 [Milligram](https://milligram.io/) — a minimalist CSS framework — helper for Jinja2 template engine in Flask.
 
-Go to [GitHub repo](https://github.com/ImJuanan/flask-milligram) to check for more details.
+Check out the [documentation](https://flask-milligram.readthedocs.io/) or
+[GitHub repo](https://github.com/ImJuanan/flask-milligram) for more details.
 """
 from setuptools import setup
 
