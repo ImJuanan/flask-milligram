@@ -19,7 +19,7 @@ API
 
 .. py:function:: render_navbar(navigation)
 
-    :param navigation: An iterable object contains several tuples or lists where the first element is the endpoint used to generate URL and second is the text displayed.
+    :param navigation: An array-like object contains at least one sub array-like object whose first element is the endpoint used to generate URL and second is the text displayed.
 
 
 render_breadcrumb()
@@ -40,7 +40,7 @@ API
 
 .. py:function:: render_breadcrumb(navigation, use_ol=False)
 
-    :param navigation: An iterable object contains several tuples or lists where the first element is the endpoint used to generate URL and second is the text displayed.
+    :param navigation: An array-like object contains at least one sub array-like object whose first element is the endpoint used to generate URL and second is the text displayed.
     :param use_ol: Default to generate ``<ul></ul>``, if set to ``True``, it will generate ``<ol></ol>``.
 
 
@@ -62,9 +62,9 @@ API
 
 .. py:function:: render_pagination(pagination, fragment='', endpoint=None, ellipses='…')
 
-    :param pagination: :class:`~flask_sqlalchemy.Pagination` instance.
-    :param fragment: Add URL fragment into link.
-    :param endpoint: Which endpoint to call when a page number is clicked.
+    :param pagination: A Flask-SQLAlchemy :class:`~flask_sqlalchemy.Pagination` instance.
+    :param fragment: URL fragment added into link.
+    :param endpoint: Endpoint to call when a page number is clicked.
     :param ellipses: Symbol to use to indicate that pages have been skipped.
 
 

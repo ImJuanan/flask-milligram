@@ -1,5 +1,7 @@
 # Flask-Milligram
 
+![Python](https://img.shields.io/badge/Python-v3.7-blue.svg?logo=python&longCache=true&logoColor=white&colorB=006dad&style=flat-square&colorA=4c566a)
+![Flask](https://img.shields.io/badge/Flask-v2.0-lightblue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
 ![PyPI - License](https://img.shields.io/pypi/l/flask-milligram)
 [![Current version on PyPI](https://img.shields.io/pypi/v/flask-milligram)](https://pypi.org/project/Flask-Milligram/)
 

@@ -27,7 +27,7 @@ Changelog
 Development
 -----------
 
-You can build the development environment locally after cloning the repo from Github:
+You can build the development environment locally by running these commands in the terminal:
 
 .. code-block:: bash
 
@@ -35,11 +35,6 @@ You can build the development environment locally after cloning the repo from Gi
     $ cd flask-milligram
     $ pipenv install
     $ pipenv run pip install -e ".[dev]"
-
-Then run tox:
-
-.. code-block:: bash
-
     $ tox
 
 

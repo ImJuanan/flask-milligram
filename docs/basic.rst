@@ -4,6 +4,8 @@ Basic
 Installation
 ------------
 
+Install Flask-Milligram from PyPI:
+
 .. code-block:: bash
 
     $ pip install flask-milligram
@@ -21,14 +23,27 @@ Initialization
 
     milligram = Milligram(app)
 
+Flask-Milligram also supports factory pattern. For example:
+
+.. code-block:: python
+
+    def create_app(config_filename):
+        app = Flask(__name__)
+        app.config.from_pyfile(config_filename)
+        
+        # import Milligram instance from another file like extensions.py
+        milligram.init_app(app)
+
+Read `Flask documentation <https://flask.palletsprojects.com/en/2.0.x/patterns/appfactories/>`_ for more details.
+
 
 Load Resources
 -----------------
 
 Flask-Milligram provides two methods to load related resources in the template:
-``milligram.load_css`` and ``milligram.load_js``.
+``load_css()`` and ``load_js()``.
 
-You need to call them in your base template first:
+Call them in your base template first:
 
 .. code-block:: jinja
 
@@ -41,12 +56,12 @@ You need to call them in your base template first:
     {{ milligram.load_js() }}
     </body>
 
-By default, normalize.css and milligram.css loaded from CDN. Set ``MILLIGRAM_SERVE_LOCAL`` to ``True`` to use built-in local files.
-Please note that these two methods are not optional, that is to say, Flask-Milligram cannot run without the related resources espectially milligram-extensions.css and milligram-extensions.js.
+By default, normalize.css and milligram.css will be loaded from CDN. You can also set ``MILLIGRAM_SERVE_LOCAL`` to ``True`` to use built-in local files.
+Please note that these two methods are not optional, that is to say, Flask-Milligram won't work without the specific resources — milligram-extensions.css and milligram-extensions.js.
 However, you can customize them anytime you want.
 
 
-Base template
+Base Template
 ----------------
 
 Here is an example base template you can use:
@@ -61,7 +76,7 @@ Here is an example base template you can use:
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
             {% block styles %}
-                {{ milligram.load_css() }}
+            {{ milligram.load_css() }}
             {% endblock %}
 
             <title>Page title</title>
@@ -71,7 +86,7 @@ Here is an example base template you can use:
             {% block content %}{% endblock %}
 
             {% block scripts %}
-                {{ milligram.load_js() }}
+            {{ milligram.load_js() }}
             {% endblock %}
         </body>
     </html>
@@ -103,6 +118,8 @@ Import the macros above from the corresponding path and call them in template en
     {{ render_pagination(pagination) }}
 
 Go to the :doc:`macros` page to see more details.
+
+.. _configurations_list:
 
 
 Configurations
