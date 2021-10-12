@@ -27,14 +27,26 @@ Changelog
 Development
 -----------
 
-You can build the development environment locally by running these commands in the terminal:
+All kinds of contributions are meaningful.
+You can build the development environment locally and run tests using tox with the following commands:
 
 .. code-block:: bash
 
     $ git clone https://github.com/ImJuanan/flask-milligram.git
     $ cd flask-milligram
     $ pipenv install
-    $ pipenv run pip install -e ".[dev]"
+    $ pipenv run pip install ".[dev]"
+    $ pipenv run tox
+
+If you are not familiar with Pipenv, this way is gonna work as well:
+
+.. code-block:: bash
+
+    $ git clone https://github.com/ImJuanan/flask-milligram.git
+    $ cd flask-milligram
+    $ python -m venv env
+    $ env/Scripts/activate
+    $ pip install ".[dev]"
     $ tox
 
 
