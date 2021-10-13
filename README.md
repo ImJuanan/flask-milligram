@@ -1,9 +1,9 @@
 # Flask-Milligram
 
-![Python](https://img.shields.io/badge/Python-v3.7-blue.svg?logo=python&longCache=true&logoColor=white&colorB=006dad&style=flat-square&colorA=4c566a)
-![Flask](https://img.shields.io/badge/Flask-v2.0-lightblue.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=5e81ac&colorA=4c566a)
-![PyPI - License](https://img.shields.io/pypi/l/flask-milligram)
-[![Current version on PyPI](https://img.shields.io/pypi/v/flask-milligram)](https://pypi.org/project/Flask-Milligram/)
+![Python](https://img.shields.io/github/pipenv/locked/python-version/ImJuanan/flask-milligram?logo=python&logoColor=white&style=flat-square)
+![Flask](https://img.shields.io/badge/Flask-v2.0-black.svg?longCache=true&logo=flask&style=flat-square&logoColor=white&colorB=black)
+[![Current version on PyPI](https://img.shields.io/pypi/v/flask-milligram?style=flat-square)](https://pypi.org/project/Flask-Milligram/)
+![PyPI - License](https://img.shields.io/pypi/l/flask-milligram?style=flat-square)
 
 [Milligram](https://milligram.io/) — a minimalist CSS framework — helper for Jinja2 template engine in Flask.
 
